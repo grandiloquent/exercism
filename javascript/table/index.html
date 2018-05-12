@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td,
+        th {
+            padding: 0;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        table {
+            background-color: transparent;
+        }
+
+        table {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        table {
+            border: 1px solid #ddd;
+        }
+
+        table>tbody>tr>td,
+        table>tfoot>tr>td,
+        table>thead>tr>th {
+            border: 1px solid #ddd;
+            border-bottom-width: 2px;
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+        }
+
+        table>tbody>tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .main {
+            width: 750px;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="main">
+
+        <table>
+            <thead>
+                 <tr><th colspan="3" style="text-align: center">大韩水晶尺寸</th></tr>
+                <tr>
+                    <th>尺寸(寸)</th>
+                    <th>外框(厘米)</th>
+                    <th>照片(厘米)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8</td>
+                    <td>21x26</td>
+                    <td>15x20</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>26x32</td>
+                    <td>20x25</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>32x37</td>
+                    <td>25x30</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>40x50</td>
+                    <td>30x40</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>60x70</td>
+                    <td>50x60</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>70x86</td>
+                    <td>60x75</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>70x100</td>
+                    <td>60x90</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>80x110</td>
+                    <td>75x100</td>
+                </tr>
+                <tr>
+                    <td>48</td>
+                    <td>75x135</td>
+                    <td>60x120</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="control">
+        <button class="okBtn">OK</button>
+    </div>
+
+    <script src="../js/dom-to-image.js"></script>
+
+    <script>
+
+        document.querySelector('.okBtn').addEventListener('click', function () {
+            domtoimage.toJpeg(document.querySelector('.main'), { quality: 0.95 })
+                .then(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+
+                })
+        })
+
+    </script>
+</body>
+
+</html>

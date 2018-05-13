@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td,
+        th {
+            padding: 0;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        table {
+            background-color: transparent;
+        }
+
+        table {
+            display:table;
+            
+            width: 100%;
+            max-width: 100%;
+        }
+
+        table {
+            border: 1px solid #ddd;
+        }
+
+        table>tbody>tr>td,
+        table>tfoot>tr>td,
+        table>thead>tr>th {
+            border: 1px solid #ddd;
+            border-bottom-width: 2px;
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+        }
+
+        table>tbody>tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .main {
+            width: 750px;
+            background: #fff;
+        }
+        td,th{
+            text-align: center;
+            vertical-align: middle!important;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="main">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>产品</th>
+                    <th>尺寸</th>
+                    <th colspan="2">照片尺寸</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="11">天使之翼 （八件套）
+                        <span>&nbsp;&nbsp;</span>
+                    </td>
+                    <td>放大</td>
+                    <td>78X122cm</td>
+                    <td>58x107cm</td>
+                    
+                </tr>
+                <tr>
+                    <td rowspan="4">三组合</td>
+                    <td rowspan="4">　</td>
+                    <td rowspan="2">41X42cm(竖)</td>
+                   
+                </tr>
+                <tr>
+                   
+                </tr>
+                <tr>
+                    <td rowspan="2">32X47cm（竖）—2</td>
+                 
+                </tr>
+                <tr>
+                   
+                </tr>
+                <tr>
+                    <td rowspan="2">摆台</td>
+                    <td>8x10寸</td>
+                    <td>16X17cm（竖）</td>
+                   
+                </tr>
+                <tr>
+                    <td>8x12寸</td>
+                    <td>14X26cm（横）</td>
+                  
+                </tr>
+                <tr>
+                    <td rowspan="4">套册</td>
+                    <td rowspan="2">8x12寸</td>
+                    <td>封面10X17cm-1</td>
+                   
+                </tr>
+                <tr>
+                    <td>内页30.48X40.7cm</td>
+                   
+                </tr>
+                <tr>
+                    <td rowspan="2">12x18寸</td>
+                    <td>封面15X25cm-1</td>
+                  
+                </tr>
+                <tr>
+                    <td>内页44X60.8cm</td>
+
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+
+    <div class="control">
+        <button class="okBtn">OK</button>
+    </div>
+
+    <script src="../js/dom-to-image.js"></script>
+
+    <script>
+
+        document.querySelector('.okBtn').addEventListener('click', function () {
+            domtoimage.toJpeg(document.querySelector('.main'), { quality: 0.95 })
+                .then(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+
+                })
+        })
+
+    </script>
+</body>
+
+</html>

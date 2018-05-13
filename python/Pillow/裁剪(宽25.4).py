@@ -27,7 +27,7 @@ def crop_by_width(centimeter,src,dst):
 
 file_paths = sys.argv[1:]
 # 宽度（厘米）
-dimension=60.9
+dimension=25.4
 
 
 
@@ -35,6 +35,6 @@ for p in file_paths:
     up=p
     
     crop_by_width(dimension,up,up)
-    print u'裁剪：',up,u'到宽度60.9厘米完成'
+    print u'裁剪：',up,u'到宽度25.4厘米完成'
 
 raw_input("Press enter to exit ;)")

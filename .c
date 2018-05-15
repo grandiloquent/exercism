@@ -1,0 +1,1 @@
+csharp\CropImage\obj\*

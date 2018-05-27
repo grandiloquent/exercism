@@ -22,8 +22,8 @@ def size_by_width(wsize,src,dst):
 
 file_paths = sys.argv[1:]
 
-w=67
-size_by_width(w,u'C:/Users/Administrator/Desktop/15X15婚纱恋人/01.jpg',u'C:/Users/Administrator/Desktop/15X15婚纱恋人/01.jpg')
+w=68
+size_by_width(w,u'C:/05.jpg',u'C:/01.jpg')
 # size_by_width(w,'d:/1.jpg','d:/1.jpg')
 for p in file_paths:
     size_by_width(w,p,p)

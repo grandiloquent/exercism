@@ -1,6 +1,5 @@
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <wchar.h>
 #include <stdlib.h>
 #include <dirent.h>
 #include <stdio.h>
@@ -8,7 +7,6 @@
 #include <errno.h>
 #include <string.h>
 #include <locale.h>
-
 #include <windows.h>
 #include <wchar.h>
 
